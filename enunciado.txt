@@ -14,3 +14,7 @@ se debe ejecutar cuando el usuario pierde el foco del control fecha.
 Tener en cuenta que se debe modificar solo lo solicitado.
 
 No se debe agregar nada que no se haya solicitado. En caso de hacerlo se considerará como incorrecto.
+
+ATENCIONES: https://6317ca93f6b281877c5d7785.mockapi.io/atencion?fecha=2022-11-03
+
+ESPECIALIDADES - MEDICOS: https://6317ca93f6b281877c5d7785.mockapi.io/especialidad/1/medico
