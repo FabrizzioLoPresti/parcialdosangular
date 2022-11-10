@@ -1,0 +1,16 @@
+En base al proyecto provisto en el adjunto, se deberán realizar las siguientes modificaciones: 
+
+El formulario de modificar artículos para que utilice Reactive Forms en vez de Template Driven (Orientado a Plantillas). 
+Se debe borrar todo lo que no se utilice y haga referencia a Template Driven. Conservar las validaciones existentes en el formulario.
+
+Agregar un combo médico (medicoId) que se cargue en base a lo seleccionado en el campo especialidad. Dicha lógica debe estar dentro del componente, 
+NO se debe realizar con eventos disparados desde el HTML. 
+Crear una nueva columna en el componente listado que muestre el costo total luego de aplicarle un porcentaje de aumento (alícuota), 
+se debe permitir que el valor de la alícuota se pueda definir a la hora de realizar el cálculo por si se necesita cambiar en un futuro.
+Agregar una validación asíncrona la cual debe verificar que no existan más de 3 atenciones para la fecha seleccionada. Dicha validación 
+se debe ejecutar cuando el usuario pierde el foco del control fecha. 
+
+
+Tener en cuenta que se debe modificar solo lo solicitado.
+
+No se debe agregar nada que no se haya solicitado. En caso de hacerlo se considerará como incorrecto.

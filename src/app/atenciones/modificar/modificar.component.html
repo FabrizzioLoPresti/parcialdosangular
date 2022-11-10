@@ -1,0 +1,44 @@
+<form [formGroup]="formulario" *ngIf="atencion">
+  <div class="mb-3">
+    <label for="inputPaciente" class="form-label">Paciente:</label>
+    <input required type="text" class="form-control" id="inputPaciente" name="paciente" formControlName="paciente">
+  </div>
+  <div class="mb-3">
+    <label for="inputDocumento" class="form-label">Documento:</label>
+    <input required type="number" class="form-control" id="inputDocumento" name="documento" formControlName="documento">
+  </div>
+  <div class="mb-3">
+    <label for="inputCosto" class="form-label">Costo:</label>
+    <input required type="number" class="form-control" id="inputCosto" name="costo" formControlName="costo">
+  </div>
+  <div class="mb-3">
+    <label for="selectEspecialidadId" class="form-label">Especialidad:</label>
+    <select required class="form-select" id="selectEspecialidadId" name="especialidadId" formControlName="especialidadId">
+        <option *ngFor="let esp of $especialidades | async" [ngValue]="esp.id">
+            {{ esp.nombre }}
+        </option>
+    </select>
+  </div>
+  <div class="mb-3" *ngIf="formulario.controls['especialidadId'].value">
+    <label for="selectMedicoId" class="form-label">Medico:</label>
+    <select required class="form-select" id="selectMedicoId" name="medicoId" formControlName="medicoId">
+        <option *ngFor="let med of $medicos | async" [ngValue]="med.id">
+            {{ med.nombre }}
+        </option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="inputFecha" class="form-label">Fecha:</label>
+    <input required type="date" class="form-control" id="inputFecha" name="fecha" formControlName="fecha">
+    <p *ngIF="formulario.controls['fecha'].touched && formulario.controls['fecha'].hasError('atencionesExists')">
+      * YA HAY MAS DE 3 ATENCIONES PARA LA FECHA SELECCIONADA
+    </p>
+  </div>
+
+  <p *ngIf="formulario.invalid && formulario.touched">Alguno de los datos es inválido.</p>
+  <p *ngIf="formulario.controls['fecha']?.touched && formulario.controls['fecha']?.hasError('atencionesExists')">
+    * YA HAY MAS DE 3 ATENCIONES PARA LA FECHA SELECCIONADA
+  </p>
+
+  <button type="submit" class="btn btn-primary" (click)="guardar()">Guardar</button>
+</form>
